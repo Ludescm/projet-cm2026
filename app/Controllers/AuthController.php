@@ -15,12 +15,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $error['password'] = 'Le mot de passe est obligatoire.';
     }
 
-    $password_hash = password_hash('toto', PASSWORD_DEFAULT);
-
-    var_dump($email);
-    var_dump($password);
-    var_dump($password_hash);
-    die;
+    if(!$error){
+        // Etablir une connexion a la DB
+        // Recuperer dans la DB l'enregistrement du user concerné (mdp_hach & role)
+        // Si l'utilisateur existe alors :
+        // - Verifier que le mdp donné correspond au mdp hashé
+        // - Verifier que le user a la bon role
+        // Si les 2 sont ok
+        // Sécurisé la connexion
+    }
 }
 
 
